@@ -5,7 +5,6 @@ from keras.layers import Dense, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 from keras.models import Sequential
 import matplotlib
-matplotlib.use('Agg')
 import matplotlib.pylab as plt
 
 

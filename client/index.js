@@ -15,16 +15,24 @@ let label = document.getElementById("label");
 document.addEventListener('mouseup', event => click = false);
 clearButton.addEventListener('click', event => {
     label.innerHTML = "-";
-    cntx.clearRect(0, 0, canvas.width, canvas.height);
+    cntx.fillRect(0, 0, canvas.width, canvas.height);
 });
 searchButton.addEventListener('click', event => {
     var image = new Image();
     image.id = "pic"
     image.src = canvas.toDataURL();
-    window.fetch("http://127.0.0.1:5000/predict", {
-        method: 'POST',
-        body: JSON.stringify(image.src),
-      }).then(resolve => { console.log(resolve); }, hein => {console.log("nope");});//label.innerHTML = "1");
+
+    var http = new XMLHttpRequest();
+    var url = "http://127.0.0.1:5000/predict";
+    
+    http.onreadystatechange = () => {
+        if (http.readyState == XMLHttpRequest.DONE) {
+            label.innerHTML = JSON.parse(http.responseText).value;
+        }
+    }
+    http.open('POST', url, true);
+    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    http.send(JSON.stringify(image.src));
 
 });
 canvas.addEventListener('mousedown', event => {
