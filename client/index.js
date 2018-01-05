@@ -8,6 +8,11 @@ cntx.lineCap = "round";
 cntx.fillStyle = "#fff";
 cntx.fillRect(0, 0, canvas.width, canvas.height);
 
+let button = document.getElementById("button");
+
+document.addEventListener('mouseup', event => click = false);
+
+button.addEventListener('click', event => cntx.clearRect( 0,0,canvas.width, canvas.height ));
 
 canvas.addEventListener('mousedown', event => {
     click = true;
@@ -16,9 +21,7 @@ canvas.addEventListener('mousedown', event => {
     yCoord = event.pageY - canvas.offsetTop
 });
 
-canvas.addEventListener('mouseup', event => { click = false; });
-
-canvas.addEventListener('click', event => { click = false; });
+canvas.addEventListener('click', event => click = false);
 
 canvas.addEventListener('mousemove', event => {
     if (click == true) {

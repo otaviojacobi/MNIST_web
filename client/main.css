@@ -1,0 +1,28 @@
+#canvas {
+    cursor: crosshair;
+    border: 1px solid black;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#background {
+    height: 500px;
+    width: 500px;
+    color: #494949;
+    fill: #494949;
+}
+
+#button {
+    height: 25px;
+    width: 80px;
+    position: absolute;
+    top: 120px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
