@@ -18,7 +18,10 @@ clearButton.addEventListener('click', event => {
     cntx.clearRect(0, 0, canvas.width, canvas.height);
 });
 searchButton.addEventListener('click', event => {
-    //TODO
+    var image = new Image();
+    image.id = "pic"
+    image.src = canvas.toDataURL();
+    debugger;
     label.innerHTML = "1";
 });
 canvas.addEventListener('mousedown', event => {
