@@ -16,13 +16,35 @@
     fill: #494949;
 }
 
-#button {
+#search {
+    height: 25px;
+    width: 80px;
+    position: absolute;
+    top: 160px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#clear {
+    height: 25px;
+    width: 80px;
+    position: absolute;
+    top: 225px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#label {
     height: 25px;
     width: 80px;
     position: absolute;
     top: 120px;
     bottom: 0;
-    left: 0;
+    left: 65px;
     right: 0;
     margin: auto;
 }

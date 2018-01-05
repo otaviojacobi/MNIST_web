@@ -8,21 +8,26 @@ cntx.lineCap = "round";
 cntx.fillStyle = "#fff";
 cntx.fillRect(0, 0, canvas.width, canvas.height);
 
-let button = document.getElementById("button");
+let searchButton = document.getElementById("search");
+let clearButton = document.getElementById("clear");
+let label = document.getElementById("label");
 
 document.addEventListener('mouseup', event => click = false);
-
-button.addEventListener('click', event => cntx.clearRect( 0,0,canvas.width, canvas.height ));
-
+clearButton.addEventListener('click', event => {
+    label.innerHTML = "-";
+    cntx.clearRect(0, 0, canvas.width, canvas.height);
+});
+searchButton.addEventListener('click', event => {
+    //TODO
+    label.innerHTML = "1";
+});
 canvas.addEventListener('mousedown', event => {
     click = true;
     cntx.save();
     xCoord = event.pageX - canvas.offsetLeft;
     yCoord = event.pageY - canvas.offsetTop
 });
-
 canvas.addEventListener('click', event => click = false);
-
 canvas.addEventListener('mousemove', event => {
     if (click == true) {
         cntx.beginPath();
